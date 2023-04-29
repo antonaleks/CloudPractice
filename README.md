@@ -4,8 +4,10 @@
 В данной практике необходимо создать инфраструктуру в проекте Selectel с помощью terraform и сконфигурировать веб-сервисы с помощью ansible
 ![img.png](assets/schema.png)
 
-В качестве конечного приложения можно выбрать либо https://github.com/antonaleks/DockerPractice либо контейнер с todo и БД из https://www.docker.com/101-tutorial/
+В качестве конечного приложения можно выбрать либо [2 лабу](https://github.com/antonaleks/DockerPractice) либо контейнер с todo и БД из [docker tutorial](https://www.docker.com/101-tutorial/)
+
 В первом случаем необходимо создать n=3 виртуальные машины в том же принципе (две разные подсети, одна виртуальная машина как шлюз)
+
 Во втором случае проще - нужно создать n=2 виртуальные машины, одну для todo app, другую для mysql DB
 ## Terraform
 1. В провайдере openstack заполнить своими данными поля из excel таблицы
