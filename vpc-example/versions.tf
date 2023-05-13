@@ -10,7 +10,7 @@ terraform {
   backend "s3" {
     bucket                      = "/students"
     endpoint                    = "s3.storage.selcloud.ru"
-    key                         = "lasarev.tfstate"
+    key                         = "<your-name>.tfstate"
     region                      = "ru-1"
     skip_region_validation      = true
     skip_credentials_validation = true
