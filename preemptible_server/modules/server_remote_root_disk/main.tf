@@ -28,13 +28,6 @@ module "image_datasource" {
   image_name = var.server_image_name
 }
 
-module "keypair" {
-  source             = "../keypair"
-  keypair_name       = "keypair-${random_string.random_name.result}"
-  keypair_public_key = var.server_ssh_key
-  keypair_user_id    = var.server_ssh_key_user
-}
-
 resource "openstack_blockstorage_volume_v3" "volume_1" {
   name              = "volume-for-${var.server_name}"
   size              = var.server_root_disk_gb
@@ -50,7 +43,7 @@ resource "openstack_blockstorage_volume_v3" "volume_1" {
 resource "openstack_compute_instance_v2" "instance_1" {
   name              = var.server_name
   flavor_id         = module.flavor.flavor_id
-  key_pair          = module.keypair.keypair_name
+  key_pair          = var.server_ssh_key
   availability_zone = var.server_zone
 
   network {

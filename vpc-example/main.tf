@@ -1,25 +1,3 @@
-# Инициализация Terraform и хранения Terraform State
-terraform {
-  required_version = ">= 0.14.0"
-  required_providers {
-    openstack = {
-      source  = "terraform-provider-openstack/openstack"
-      version = "~> 1.49.0"
-    }
-  }
-
-}
-
-# Инициализация провайдера OpenStack
-provider "openstack" {
-  auth_url    = "https://api.selvpc.ru/identity/v3"
-  domain_name = ""
-  tenant_id   = ""
-  user_name   = ""
-  password    = ""
-  region      = "ru-3"
-}
-
 # Создание SSH-ключа
 resource "openstack_compute_keypair_v2" "key_tf" {
   name       = "key_tf"
@@ -82,7 +60,7 @@ resource "openstack_compute_flavor_v2" "flavor_server" {
 # Создание сетевого загрузочного диска размером 5 ГБ из образа
 resource "openstack_blockstorage_volume_v3" "volume_server" {
   name                 = "volume-for-server1"
-  size                 = "5"
+  size                 = "10"
   image_id             = data.openstack_images_image_v2.ubuntu_image.id
   volume_type          = var.volume_type
   availability_zone    = var.az_zone
