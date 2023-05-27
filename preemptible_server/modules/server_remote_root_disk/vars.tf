@@ -38,3 +38,7 @@ variable "server_group_id" {
 variable "server_preemptible_tag" {
   default = []
 }
+
+variable "network_id" {}
+
+variable "subnet_id" {}
