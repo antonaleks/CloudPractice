@@ -1,0 +1,17 @@
+---
+# vars file for docker-service
+
+docker_service__compose:
+  version: "3"
+
+  services:
+    app:
+      image: antonaleks/101-todo-app
+      restart: on-failure
+      ports:
+        - "80:80"
+      environment:
+        MYSQL_HOST: "{{ private_database_ip }}"
+        MYSQL_USER: root
+        MYSQL_PASSWORD: secret
+        MYSQL_DB: todos

@@ -1,0 +1,17 @@
+---
+# vars file for docker-service
+
+docker_service__compose:
+  version: "3"
+  services:
+    mysql:
+      image: mysql:5.7
+      ports:
+        - "3306:3306"
+      volumes:
+        - todo-mysql-data:/var/lib/mysql
+      environment:
+        MYSQL_ROOT_PASSWORD: secret
+        MYSQL_DATABASE: todos
+  volumes:
+    todo-mysql-data:

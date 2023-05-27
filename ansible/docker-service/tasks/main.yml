@@ -1,0 +1,26 @@
+---
+# tasks file for docker-service
+
+- name: Create docker-compose dirs
+  file:
+    state: directory
+    path: "{{ item }}"
+    mode: 0755
+    owner: root
+    group: root
+  loop:
+    - /opt/service
+    - /opt/service/compose
+    - /opt/service/compose/data/
+
+- name: Configure service compose file
+  template:
+    src: docker-compose.yml.j2
+    dest: /opt/service/compose/docker-compose.yml
+    mode: 0644
+    owner: root
+    group: root
+
+- name: Start containers
+  docker_compose:
+    project_src: /opt/service/compose
