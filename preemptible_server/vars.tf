@@ -31,7 +31,7 @@ variable "server_volume_type" {
 }
 
 variable "server_image_name" {
-  default = "Ubuntu 20.04 LTS 64-bit"
+  default = "Ubuntu 22.04 LTS 64-bit"
 }
 
 variable "server_preemptible_tag" {
