@@ -2,7 +2,7 @@
 module "keypair" {
   source             = "./modules/keypair"
   keypair_name       = "keypair-tf"
-  keypair_public_key = file("~/.ssh/id_rsa.pub")
+  keypair_public_key = file("~/.ssh/id_ed25519.pub")
   region             = var.region
 }
 
