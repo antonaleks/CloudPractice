@@ -1,4 +1,4 @@
-# Инициализация провайдера OpenStack
+﻿# Инициализация провайдера OpenStack
 provider "openstack" {
   auth_url    = "https://api.selvpc.ru/identity/v3"
   domain_name = var.domain_name

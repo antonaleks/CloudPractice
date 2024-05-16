@@ -7,7 +7,7 @@ variable "os_auth_url" {
 }
 
 variable "server_name" {
-  default = "tf_server"
+  default = "my_server"
 }
 
 variable "server_vcpus" {
