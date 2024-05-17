@@ -149,7 +149,4 @@ ${database_vm_ip_public}
 </p>
 
 
-<p align="center">
-<img width=90% src = "">
-</p>
 
