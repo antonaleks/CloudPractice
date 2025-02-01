@@ -1,0 +1,5 @@
+site_name: 'Жижилева Арина. Практическое задание работа с terraform и облаком selectel.'
+theme:
+  name: 'material'
+nav:
+  - Ход работы: index.md
