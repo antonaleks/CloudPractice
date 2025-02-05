@@ -32,3 +32,6 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+/preemptible_server/modules/keypair/id_rsa
+/preemptible_server/modules/keypair/id_rsa.pub
+/.vs
